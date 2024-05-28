@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Fill Out Survey</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <script src="validate.js"></script>
+    <script src="submit_form.js"></script>
 </head>
 <body>
     <div class="container">
@@ -16,31 +17,27 @@
             </nav>
         </header>
         <main>
-            <h2>Fill Out Survey</h2>
-            <form name="surveyForm" action="save_survey.php" method="post" onsubmit="return validateForm()">
+           
+            <form id="surveyForm" name="surveyForm">
                 <label>Personal Details:</label>
-                <div style="display: flex; justify-content: space-between;">
-                    <div style="flex: 1; margin-right: 20px;">
-                        <label for="full_names">Full Names:</label>
-                        <input type="text" id="full_names" name="full_names" required>
-                    </div>
-                    <div style="flex: 1;">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
+                <div class="input-group">
+                    <label for="full_names">Full Names:</label>
+                    <input type="text" id="full_names" name="full_names" required>
                 </div>
-                <div style="display: flex; justify-content: space-between;">
-                    <div style="flex: 1; margin-right: 20px;">
-                        <label for="date_of_birth">Date of Birth:</label>
-                        <input type="date" id="date_of_birth" name="date_of_birth" required>
-                    </div>
-                    <div style="flex: 1;">
-                        <label for="contact_number">Contact Number:</label>
-                        <input type="text" id="contact_number" name="contact_number" required>
-                    </div>
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="date_of_birth">Date of Birth:</label>
+                    <input type="date" id="date_of_birth" name="date_of_birth" required>
+                </div>
+                <div class="input-group">
+                    <label for="contact_number">Contact Number:</label>
+                    <input type="text" id="contact_number" name="contact_number" required>
                 </div>
                 <label>What is your favorite food?</label>
-                <div>
+                <div class="checkbox-group">
                     <input type="checkbox" name="favorite_food[]" value="Pizza"> Pizza
                     <input type="checkbox" name="favorite_food[]" value="Pasta"> Pasta
                     <input type="checkbox" name="favorite_food[]" value="Pap and Wors"> Pap and Wors
@@ -58,39 +55,40 @@
                     </tr>
                     <tr>
                         <td>I like to watch movies</td>
-                        <td><input type="radio" name="watch_movies" value="1"></td>
-                        <td><input type="radio" name="watch_movies" value="2"></td>
-                        <td><input type="radio" name="watch_movies" value="3"></td>
-                        <td><input type="radio" name="watch_movies" value="4"></td>
-                        <td><input type="radio" name="watch_movies" value="5"></td>
+                        <td><input type="radio" name="watch_movies" value="1" required></td>
+                        <td><input type="radio" name="watch_movies" value="2" required></td>
+                        <td><input type="radio" name="watch_movies" value="3" required></td>
+                        <td><input type="radio" name="watch_movies" value="4" required></td>
+                        <td><input type="radio" name="watch_movies" value="5" required></td>
                     </tr>
                     <tr>
                         <td>I like to listen to radio</td>
-                        <td><input type="radio" name="listen_radio" value="1"></td>
-                        <td><input type="radio" name="listen_radio" value="2"></td>
-                        <td><input type="radio" name="listen_radio" value="3"></td>
-                        <td><input type="radio" name="listen_radio" value="4"></td>
-                        <td><input type="radio" name="listen_radio" value="5"></td>
+                        <td><input type="radio" name="listen_radio" value="1" required></td>
+                        <td><input type="radio" name="listen_radio" value="2" required></td>
+                        <td><input type="radio" name="listen_radio" value="3" required></td>
+                        <td><input type="radio" name="listen_radio" value="4" required></td>
+                        <td><input type="radio" name="listen_radio" value="5" required></td>
                     </tr>
                     <tr>
                         <td>I like to eat out</td>
-                        <td><input type="radio" name="eat_out" value="1"></td>
-                        <td><input type="radio" name="eat_out" value="2"></td>
-                        <td><input type="radio" name="eat_out" value="3"></td>
-                        <td><input type="radio" name="eat_out" value="4"></td>
-                        <td><input type="radio" name="eat_out" value="5"></td>
+                        <td><input type="radio" name="eat_out" value="1" required></td>
+                        <td><input type="radio" name="eat_out" value="2" required></td>
+                        <td><input type="radio" name="eat_out" value="3" required></td>
+                        <td><input type="radio" name="eat_out" value="4" required></td>
+                        <td><input type="radio" name="eat_out" value="5" required></td>
                     </tr>
                     <tr>
                         <td>I like to watch TV</td>
-                        <td><input type="radio" name="watch_tv" value="1"></td>
-                        <td><input type="radio" name="watch_tv" value="2"></td>
-                        <td><input type="radio" name="watch_tv" value="3"></td>
-                        <td><input type="radio" name="watch_tv" value="4"></td>
-                        <td><input type="radio" name="watch_tv" value="5"></td>
+                        <td><input type="radio" name="watch_tv" value="1" required></td>
+                        <td><input type="radio" name="watch_tv" value="2" required></td>
+                        <td><input type="radio" name="watch_tv" value="3" required></td>
+                        <td><input type="radio" name="watch_tv" value="4" required></td>
+                        <td><input type="radio" name="watch_tv" value="5" required></td>
                     </tr>
                 </table>
                 <input type="submit" value="SUBMIT">
             </form>
+            <p id="successMessage" style="display:none; color:green;">Record entered successfully</p>
         </main>
     </div>
 </body>

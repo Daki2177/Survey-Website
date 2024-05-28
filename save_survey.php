@@ -22,14 +22,16 @@ $watch_tv = $_POST['watch_tv'];
 
 $sql = "INSERT INTO surveys (full_names, email, date_of_birth, contact_number, favorite_food, watch_movies, listen_radio, eat_out, watch_tv) VALUES ('$full_names', '$email', '$date_of_birth', '$contact_number', '$favorite_food', '$watch_movies', '$listen_radio', '$eat_out', '$watch_tv')";
 
+$response = [];
+
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    $response['success'] = true;
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    $response['success'] = false;
 }
 
 $conn->close();
 
-header('Location: view_results.php');
-exit;
+header('Content-Type: application/json');
+echo json_encode($response);
 ?>
