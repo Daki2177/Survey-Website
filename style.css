@@ -52,13 +52,14 @@ label {
 
 .input-group {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Align items to the top */
     margin-bottom: 20px;
 }
 
 .input-group label {
     width: 150px;
-    text-align: left;
+    text-align: right; /* Align labels to the right */
+    margin-right: 10px; /* Add margin to create space between label and input */
 }
 
 .input-group input[type="text"],
@@ -68,7 +69,7 @@ label {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 3px;
-    margin-left: 10px;
+    margin-left: 10px; /* Adjust margin for spacing */
 }
 
 input[type="checkbox"] {
