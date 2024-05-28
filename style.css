@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #fff;
+    color: #000;
 }
 
 .container {
@@ -45,35 +46,26 @@ h2 {
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
     font-weight: bold;
 }
 
 .input-group {
-    display: flex;
-    align-items: flex-start; /* Align items to the top */
     margin-bottom: 20px;
 }
 
 .input-group label {
-    width: 150px;
-    text-align: right; /* Align labels to the right */
-    margin-right: 10px; /* Add margin to create space between label and input */
+    display: block;
+    margin-bottom: 5px;
 }
 
 .input-group input[type="text"],
 .input-group input[type="email"],
 .input-group input[type="date"] {
-    flex: 1;
+    width: 100%;
     padding: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #2196F3;
     border-radius: 3px;
-    margin-left: 10px; /* Adjust margin for spacing */
-}
-
-input[type="checkbox"] {
-    margin-right: 10px;
+    color: #000;
 }
 
 .checkbox-group {
@@ -81,6 +73,11 @@ input[type="checkbox"] {
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 20px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #2196F3;
 }
 
 table {
@@ -92,9 +89,10 @@ table {
 
 table th,
 table td {
-    border: 1px solid #ccc;
+    border: 1px solid #2196F3;
     text-align: center;
     padding: 10px;
+    color: #000;
 }
 
 table th {
@@ -103,6 +101,7 @@ table th {
 
 input[type="radio"] {
     margin: 0 auto;
+    accent-color: #2196F3;
 }
 
 input[type="submit"] {
@@ -116,6 +115,18 @@ input[type="submit"] {
     margin: 20px auto;
 }
 
+.results {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.results p {
+    margin: 5px 0;
+    color: #000;
+}
+
 @media (max-width: 768px) {
     .container {
         width: 90%;
@@ -127,18 +138,5 @@ input[type="submit"] {
 
     nav {
         margin-top: 10px;
-    }
-
-    .input-group,
-    .checkbox-group {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .input-group input[type="text"],
-    .input-group input[type="email"],
-    .input-group input[type="date"] {
-        width: 100%;
-        margin-left: 0;
     }
 }
