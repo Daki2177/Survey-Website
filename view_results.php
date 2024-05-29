@@ -70,12 +70,12 @@
                 }
 
                 function calculate_percentage($count, $total) {
-                    return ($total > 0) ? round(($count / $total) * 100, 2) : 0;
+                    return ($total > 0) ? round(($count / $total) * 100, 1) : 0;
                 }
 
                 function calculate_average($array) {
                     $count = count($array);
-                    return ($count > 0) ? round(array_sum($array) / $count, 2) : 0;
+                    return ($count > 0) ? round(array_sum($array) / $count, 1) : 0;
                 }
 
                 $total_surveys = $result->num_rows;
@@ -84,11 +84,11 @@
                 echo "<p>Average Age:</p><p>" . calculate_average($ages) . "</p>";
                 echo "<p>Oldest person who participated in survey:</p><p>" . ($ages ? max($ages) : 'N/A') . "</p>";
                 echo "<p>Youngest person who participated in survey:</p><p>" . ($ages ? min($ages) : 'N/A') . "</p>";
-
+                echo "<div class='section-spacing'></div>";
                 foreach ($favorite_foods as $food => $count) {
                     echo "<p>Percentage of people who like $food:</p><p>" . calculate_percentage($count, $total_surveys) . "%</p>";
                 }
-
+                echo "<div class='section-spacing'></div>";
                 foreach ($activities as $activity => $ratings) {
                     echo "<p>Average rating for " . str_replace("_", " ", $activity) . ":</p><p>" . calculate_average($ratings) . "</p>";
                 }

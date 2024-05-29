@@ -2,45 +2,52 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fff;
-    color: #000;
-    height: 100vh;
+    background-color: #f4f4f4; /* Light background color for better contrast */
+    color: #333; /* Darker text for readability */
+    min-height: 100vh; /* Ensure body takes full viewport height */
     display: flex;
     justify-content: center;
-    align-items: center;
-    overflow: hidden; 
+    align-items: flex-start; /* Align content at the top */
+    padding: 20px; /* Add padding for breathing space */
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #000; 
+    width: 100%;
+    max-width: 800px; /* Reduce max-width for better readability */
+    background-color: #fff; /* White background for the container */
+    border: 1px solid #ddd; /* Light border around the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     box-sizing: border-box;
+    padding: 20px;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #ddd; /* Add border to separate header */
     padding-bottom: 10px;
+    margin-bottom: 20px; /* Add margin to separate header from content */
 }
 
 header h1 {
     font-size: 24px;
     margin: 0;
     font-weight: bold;
+    color: #2196F3; /* Add some color to the header title */
 }
 
 nav a {
     text-decoration: none;
-    color: #000;
+    color: #333;
     margin: 0 10px;
+    font-size: 14px; /* Smaller font for navigation links */
 }
 
 nav a.active {
     color: #2196F3;
+    font-weight: bold; /* Highlight the active link */
 }
 
 main {
@@ -52,27 +59,39 @@ h2 {
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
+    color: #555; /* Softer color for the subheading */
 }
 
 .results {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Two columns layout */
     gap: 10px;
     margin-top: 20px;
+    justify-content: center; /* Center the grid items */
 }
 
 .results p {
     margin: 5px 0;
-    color: #000;
+    color: #333;
     display: flex;
     justify-content: space-between;
-    padding-right: 20px;
+    width: 100%; /* Make the paragraph take full width */
+    max-width: 600px; /* Center-align within the container */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10%; /* Add padding to maintain spacing */
 }
 
 .section-spacing {
     grid-column: span 2;
     margin-top: 20px;
     margin-bottom: 20px;
+    border-top: 1px solid #ddd; /* Add a divider between sections */
+    padding-top: 10px;
+    width: 100%; /* Make the divider take full width */
+    max-width: 600px; /* Center-align within the container */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media (max-width: 768px) {
@@ -90,11 +109,15 @@ h2 {
     }
 
     .results {
-        grid-template-columns: 1fr;
-        padding-left: 0; 
+        grid-template-columns: 1fr; /* Single column layout on small screens */
     }
 
     .results p {
+        padding-left: 0;
         padding-right: 0;
+    }
+
+    .section-spacing {
+        max-width: 100%; /* Reset max-width for small screens */
     }
 }
