@@ -50,7 +50,8 @@ label {
 }
 
 .input-group {
-    margin-bottom: 20px;
+    max-width: 400px;
+    margin: 0 auto 20px;
 }
 
 .input-group label {
@@ -68,15 +69,28 @@ label {
     color: #000;
 }
 
-.checkbox-group {
+.checkbox-group-container {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
+    margin-top: 20px;
     margin-bottom: 20px;
+    margin-left: 30px; /* Adjust this value to move the checkboxes to the right */
 }
 
-input[type="checkbox"] {
-    margin-right: 10px;
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 5px;
     accent-color: #2196F3;
 }
 
@@ -138,5 +152,17 @@ input[type="submit"] {
 
     nav {
         margin-top: 10px;
+    }
+
+    .checkbox-group-container {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 0;
+    }
+
+    .checkbox-group {
+        margin-left: 0;
+        flex-direction: column;
+        align-items: flex-start;
     }
 }

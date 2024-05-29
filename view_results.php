@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>View Survey Results</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="view_results.css">
 </head>
 <body>
     <div class="container">
